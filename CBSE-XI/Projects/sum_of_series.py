@@ -39,10 +39,6 @@ def sum_of_series_1(x, n):
 
     return (1 - x ** (n+1)) / (1 - x)
 
-# Checking the sum of series for n = 7 x = 2 nth term = 128
-assert sum_of_series_1(2, 7) == 1 + 2 + 4 + 8 + 16 + 32 + 64 + 128
-
-print(f'Sum of first series for x = 2 and n = 7 is {sum_of_series_1(2, 7)}')
 
 # 2. (-1**n)x**(n)
 def sum_of_series_2(x, n):
@@ -62,11 +58,6 @@ def sum_of_series_2(x, n):
     sum_pos = (1 - y ** m_pos) / (1 - y)
     sum_neg = (-x) * (1 - y ** m_neg) / (1 - y)
     return sum_pos + sum_neg
-
-# Checking the sum of series for n = 7 x = 2 nth term = 128
-assert sum_of_series_2(2, 7) == 1 - 2 + 4 - 8 + 16 - 32 + 64 - 128
-
-print(f'Sum of second series for x = 2 and n = 7 is {sum_of_series_2(2, 7)}')
 
 
 # 3. (-1**(n+1))x**(n)/n 0 < n <= n
@@ -89,11 +80,6 @@ def sum_of_series_3(x, n):
             term = (-1)**m * x**m / m
             result += term
     return result
-
-# Checking the sum of series for n = 7 x = 2 nth term = 128/7
-assert sum_of_series_3(2, 7) == 2 + 4/2 - 8/3 + 16/4 - 32/5 + 64/6 - 128/7
-
-print('Sum of third series for x = 2 and n = 7 is {:.2f}'.format(sum_of_series_3(2, 7)))
 
 
 # 4. x**n / n!
@@ -125,7 +111,21 @@ def sum_of_series_4(x, n):
             result += term
     return result
 
-# Checking the sum of series for n = 7 x = 2 nth term = 128/7
-assert sum_of_series_4(2, 7) == 2 + 4/2 - 8/6 + 16/24 - 32/120 + 64/720 - 128/5040
 
-print('Sum of fourth series for x = 2 and n = 7 is {:.2f}'.format(sum_of_series_4(2, 7)))
+if __name__ == "__main__":
+    # Checking the sum of series for n = 7 x = 2 nth term = 128
+    assert sum_of_series_1(2, 7) == 1 + 2 + 4 + 8 + 16 + 32 + 64 + 128
+
+    print(f'Sum of first series for x = 2 and n = 7 is {sum_of_series_1(2, 7)}')
+    # Checking the sum of series for n = 7 x = 2 nth term = 128
+    assert sum_of_series_2(2, 7) == 1 - 2 + 4 - 8 + 16 - 32 + 64 - 128
+
+    print(f'Sum of second series for x = 2 and n = 7 is {sum_of_series_2(2, 7)}')
+    # Checking the sum of series for n = 7 x = 2 nth term = 128/7
+    assert sum_of_series_3(2, 7) == 2 + 4 / 2 - 8 / 3 + 16 / 4 - 32 / 5 + 64 / 6 - 128 / 7
+
+    print('Sum of third series for x = 2 and n = 7 is {:.2f}'.format(sum_of_series_3(2, 7)))
+    # Checking the sum of series for n = 7 x = 2 nth term = 128/7
+    assert sum_of_series_4(2, 7) == 2 + 4 / 2 - 8 / 6 + 16 / 24 - 32 / 120 + 64 / 720 - 128 / 5040
+
+    print('Sum of fourth series for x = 2 and n = 7 is {:.2f}'.format(sum_of_series_4(2, 7)))
